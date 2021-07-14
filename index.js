@@ -116,7 +116,7 @@ function addChat(input, product) {
     botText.innerText = `${product}`;
      audio.play();
     //textToSpeech(product)
-  }, 2000
+  }, 3000
   )
 
 }
