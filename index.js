@@ -36,9 +36,6 @@ function output(input) {
   }else if (text.match(/master/gi)) {
     product = "I have decided to reward my good boys with some photos of my feet in motorcycle boots."
     addChat(input, product);
-  }else if (text.match(/leather/gi)) {
-    product = "Leather culture was constructed through circuits. Bike runs, bars, back rooms, and the annual autumn orgy of the CMC Carnival"
-    addChat(input, product);
   }
   else if (text.match(/(corona|covid|virus)/gi)) {
     // If no match, check if message contains `coronavirus`
