@@ -2,13 +2,23 @@ var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
 
+var myPix = new Array("./images/df1.jpg","./images/df2.jpg","./images/df3.jpg","./images/df4.jpg","./images/df5.jpg","./images/df6.jpg");
+ var randomNum = Math.floor(Math.random() * myPix.length);
+
+
 $(window).load(function() {
   $messages.mCustomScrollbar();
+  choosePic();
 
   setTimeout(function() {
     //fakeMessage();
   }, 100);
 });
+
+function choosePic() {
+    
+     document.getElementById("myPicture").src = myPix[randomNum];
+}
 
 function updateScrollbar() {
   $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
@@ -79,32 +89,32 @@ let product;
 if (compare(prompts, replies, text)) { 
     // Search for exact match in `prompts`
     product = compare(prompts, replies, text);
-    $('<div class="message loading new"><figure class="avatar"><img src="./images/face1.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+    $('<div class="message loading new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
     setTimeout(function() {
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="./images/face1.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
   }, 1000 + (Math.random() * 20) * 100);
   } else if (text.match(/thank/gi)) {
     product = "Hey, I'm higher than you in the dominance hierarchy.";
-    $('<div class="message loading new"><figure class="avatar"><img src="./images/face1.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+    $('<div class="message loading new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
     setTimeout(function() {
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="./images/face1.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
   }, 1000 + (Math.random() * 20) * 100);
 
   }else if (text.match(/master/gi)) {
     product = "I have decided to reward my good boys with some photos of my feet in motorcycle boots.";
-    $('<div class="message loading new"><figure class="avatar"><img src="./images/face1.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+    $('<div class="message loading new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
     setTimeout(function() {
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="./images/face1.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
   }, 1000 + (Math.random() * 20) * 100);
@@ -157,12 +167,12 @@ function fakeMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="./images/bot2.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+$('<div class="message loading new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));  updateScrollbar();
   updateScrollbar();
 
   setTimeout(function() {
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="./images/bot2.png" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure>' + product + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
     i++;
@@ -177,7 +187,7 @@ function cloudMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="./images/face1.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+$('<div class="message loading new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));  updateScrollbar();
   updateScrollbar();
 
   setTimeout(function() {
@@ -195,7 +205,7 @@ function randomNumber(max) {
     a = randomNumber((data.texts).length);
     //console.log((data.texts).length);
     //console.log(data.texts[a]);
-    $('<div class="message new"><figure class="avatar"><img src="./images/face1.jpg" /></figure>' + data.texts[a] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src=" ' + './images/df'+ (randomNum+1) +'.jpg" /></figure>' + data.texts[a] + '</div>').appendTo($('.mCSB_container')).addClass('new');
 
 
 
